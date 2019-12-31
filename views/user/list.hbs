@@ -1,0 +1,28 @@
+<h3><a class="btn btn-secondary" href="/user"><i class="fa fa-plus"></i> צור חדש</a> 
+<a class="btn btn-secondary" href="/"> צפה במסת נתונים</a>
+רשימת לקוחות</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>שם מלא</th>
+            <th>מייל</th>
+            <th>טלפון</th>
+            <th>עיר</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.fullName}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.city}}</td>
+            <td>
+                <a href="/user/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/user/delete/{{this._id}}" onclick="return confirm('האם אתה בטוח שברצונך למחוק ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
